@@ -36,6 +36,7 @@ def Checkroot():
         udte()
     else:
         print("\n\n [Warning] --> You are not root - Please run \"XEye-inj\" with sudo - Example: \"sudo python3 XEye-inj.py\n ")
+        exit()
 Checkroot()
 def mpack(packet, load):
     packet[sc.Raw].load = load
